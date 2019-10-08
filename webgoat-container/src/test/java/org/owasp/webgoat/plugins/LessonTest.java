@@ -6,9 +6,9 @@ import org.owasp.webgoat.i18n.PluginMessages;
 import org.owasp.webgoat.session.WebSession;
 import org.owasp.webgoat.session.WebgoatContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.embedded.LocalServerPort;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.context.WebApplicationContext;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
  * @since 5/20/17.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestPropertySource(locations = "classpath:/application-test.properties")
+@TestPropertySource(locations = {"classpath:/application-webgoat.properties", "classpath:/application-test.properties"})
 public abstract class LessonTest {
 
     @LocalServerPort
